@@ -2,9 +2,9 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 import instaloader
 import requests
+import os
 
-# Reemplaza 'YOUR_TOKEN' con el token que recibiste de BotFather
-TOKEN = 'TOKEN_TELEGRAM'
+TOKEN = os.getenv('TOKEN_TELEGRAM')
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text('Hola! Envíame una URL de Instagram y te mostraré el video.')
