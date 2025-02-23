@@ -1,10 +1,13 @@
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 import instaloader
-import requests
-import os
 
+# Obtener el token de la variable de entorno
 TOKEN = os.getenv('TOKEN_TELEGRAM')
+
+if not TOKEN:
+    raise ValueError("El token de Telegram no está configurado correctamente.")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text('Hola! Envíame una URL de Instagram y te mostraré el video.')
