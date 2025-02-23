@@ -4,7 +4,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 import instaloader
 
 # Obtener el token de la variable de entorno
-TOKEN = os.getenv('TOKEN_TELEGRAM')
+TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 if not TOKEN:
     raise ValueError("El token de Telegram no está configurado correctamente.")
